@@ -1,0 +1,49 @@
+GROUP.A Group Symbols [AAPL,MSFT]
+PORT.A Portfolio Aether AAPL
+PORT.A Portfolio Capital 50000 -- (VaR)
+PORT.A Portfolio Series Weekly 2 -- (time to expiry - Weekly 1 thru 5, Monthly 1 thru 3)
+
+PORT.A Portfolio Risk 60
+GROUP.A Forecast Confidence Percentage 90 -- (0 to 100)
+-- GROUP.A Forecast Confidence Nominal -- (High Nominal Low)
+
+GROUP.A Forecast Changes [(2020-01-01, 0)]
+-- BAC Forecast Changes [(2020-01-015, 01),(2020-02-01, 03)] -- [(expiry date, percent change)]
+-- BAC Forecast Prices [(2021-06-07, 43.50),(2021-06-21, 44.00)]
+-- AMD Forecast Targets [(2021-12-30, 220)
+-- AMD Forecast Targets [(20210-06-18, 170), (2021-07-16, 180), (2021-08-20, 190), (2021-09-17, 200)] 
+
+PORT.A Portfolio Commission (0.0, 4, 0.0035) -- (per stock order, per option contract, per stock share)
+PORT.A Portfolio Symbols [GROUP.A]
+GROUP.A Model Range SD 1.1 -- (0.9 to 1.2)
+PORT.A  Portfolio Window 10 -- (days look back)
+
+-- Instrument
+GROUP.A Use Instrument (Cash Long)
+-- GROUP.A Use Instrument (Stock Long)
+-- GROUP.A Use Instrument (Stock Short)
+GROUP.A Use Instrument (Option Long Put)
+GROUP.A Use Instrument (Option Short Put)
+GROUP.A Use Instrument (Option Long Call)
+GROUP.A Use Instrument (Option Short Call)
+GROUP.A Use Instrument (Covered Call)
+GROUP.A Use Instrument (Straddle Short)
+GROUP.A Use Instrument (Strangle Short)
+-- GROUP.A Use Instrument (Straddle Long) -- not supported by the engine by design
+-- GROUP.A Use Instrument (Strangle Long) -- not supported by the engine by design
+GROUP.A Use Instrument (Ratio Call Short)
+GROUP.A Use Instrument (Ratio Call Long)
+GROUP.A Use Instrument (Ratio Put Long)
+GROUP.A Use Instrument (Ratio Put Short)
+GROUP.A Use Instrument (Vertical Short Put)
+GROUP.A Use Instrument (Vertical Short Call)
+GROUP.A Use Instrument (Vertical Long Put)  -- NEW
+GROUP.A Use Instrument (Vertical Long Call)  -- NEW
+GROUP.A Use Instrument (Iron Butterfly Short)
+GROUP.A Use Instrument (Iron Condor Short)
+
+-- Constraints
+-- AAPL Minimum Shares 10 (Stock Short)
+-- AAPL Minimum Shares 10 (Stock Short)
+-- DIS Maximum Shares 7 (Option Short Put 140)
+-- CVX Minimum Shares 300 (Straddle Short 82)
